@@ -33,7 +33,7 @@ easyhistory.update('D', export='csv', path='history')
 #### 使用
 
 ```python
-his = easytrader.History(dtype='D', path='行情目录')
+his = easyhistory.History(dtype='D', path='行情目录')
 
 # MA 计算, 直接调用的 talib 的对应函数
 res = his['000001'].MA(5)
