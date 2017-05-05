@@ -7,6 +7,37 @@
 import easyhistory
 ```
 
+### 读取 rqalpha 保存的历史数据
+
+读取平安银行
+
+```python
+easyhistory.history('000001') 
+
+return pandas dataframe: 
+                  open   close    high     low    volume  total_turnover  \
+datetime
+20050104000000  1.6668  1.6491  1.6668  1.6338   6961738        11465602
+20050105000000  1.6491  1.6338  1.6567  1.6061  12739274        20718558
+20050106000000  1.6440  1.6491  1.6668  1.6314  10542101        17333840
+20050107000000  1.6643  1.6466  1.6693  1.6338   7457207        12302853
+20050110000000  1.6466  1.6668  1.6668  1.6112  10406261        17111498
+
+                limit_up  limit_down
+datetime
+20050104000000    1.8337      1.4999
+20050105000000    1.8135      1.4846
+20050106000000    1.7983      1.4695
+20050107000000    1.8135      1.4846
+20050110000000    1.8110      1.4822
+```
+
+读取上证指数
+
+```python
+easyhistory.history('000001', market='sh')
+```
+
 ### 初始化日线历史数据
 
 ```python
@@ -49,3 +80,9 @@ date
 ```
 
 注: [talib 可用指标以及相关参数](https://github.com/mrjbq7/ta-lib) 以及 [pandas 相关](https://github.com/pydata/pandas)
+
+
+### Q&A
+
+Q:安装 `talib` 提示找不到 `vcvarsall.bat` ?
+A: 去 `http://www.lfd.uci.edu/~gohlke/pythonlibs` 下载 `wheels`版本的包使用 `pip install xxx.whl` 安装
